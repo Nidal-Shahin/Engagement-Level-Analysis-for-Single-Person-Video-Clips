@@ -1,0 +1,7 @@
+gradio
+opencv-python-headless
+torch
+torchvision
+timm
+albumentations
+numpy
