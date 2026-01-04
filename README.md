@@ -52,34 +52,15 @@ The system expects the following data structure (configured for Kaggle environme
 
 ## 📊 Engagement Levels
 
-The system classifies engagement into four categories based on the calculated score 
-***𝐿***: 
-```bash
-Level	Range	Visualization Color
-Very High	
-𝐿
-≥
-2.5
-L≥2.5	Green
-High	
-1.5
-≤
-𝐿
-<
-2.5
-1.5≤L<2.5	Yellow / Cyan
-Low	
-0.5
-≤
-𝐿
-<
-1.5
-0.5≤L<1.5	Orange
-Very Low	
-𝐿
-<
-0.5
-L<0.5	Red
+The system classifies engagement into four categories based on the calculated score ***𝐿***:
+
+| Level      | Range        | Visualization Color |
+|------------|--------------|---------------------|
+| Very High  | L ≥ 2.5      | Green               |
+| High       | 1.5 ≤ L < 2.5| Yellow / Cyan       |
+| Low        | 0.5 ≤ L < 1.5| Orange              |
+| Very Low   | L < 0.5      | Red                 |
+
 ```
 
 ## 💻 Usage
