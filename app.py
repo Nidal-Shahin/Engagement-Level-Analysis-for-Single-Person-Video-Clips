@@ -69,10 +69,15 @@ def process_video(video_path, smooth_factor=5, batch_size=12, target_fps=5):
     detector = cv2.FaceDetectorYN.create("face_detection_yunet.onnx", "", (0, 0))
     cap = cv2.VideoCapture(video_path)
     width, height, original_fps = int(cap.get(3)), int(cap.get(4)), cap.get(5)
-    
-    skip_interval = max(1, int(original_fps / target_fps))
+
+    if original_fps <= 0 or original_fps > 60:
+        output_fps = 20.0 
+    else:
+        output_fps = original_fps
+
+    skip_interval = max(1, int(output_fps / target_fps))
     temp_out = tempfile.NamedTemporaryFile(suffix=".mp4", delete=False).name
-    out = cv2.VideoWriter(temp_out, cv2.VideoWriter_fourcc(*'mp4v'), original_fps, (width, height))
+    out = cv2.VideoWriter(temp_out, cv2.VideoWriter_fourcc(*'mp4v'), output_fps, (width, height))
 
     transform = A.Compose([A.Resize(224, 224), A.Normalize(), ToTensorV2()])
     
