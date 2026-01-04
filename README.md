@@ -61,7 +61,6 @@ The system classifies engagement into four categories based on the calculated sc
 | Low        | 0.5 ≤ L < 1.5| Orange              |
 | Very Low   | L < 0.5      | Red                 |
 
-```
 
 ## 💻 Usage
 ### Running the UI
