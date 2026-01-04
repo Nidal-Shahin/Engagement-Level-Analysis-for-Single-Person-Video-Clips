@@ -38,15 +38,12 @@ pip install -r requirements.txt
 
 ### 2. File Structure
 
-The system expects the following data structure (configured for Kaggle environments):
+The system expects the following data structure (based on the space files):
 
 ```bash
-/kaggle/input/
-├── adversarial-vit-with-discriminator-and-gru/
-│   └── best_progressive_model.pth
-├── yunet-facial-landmarks-extractor/
-│   └── face_detection_yunet (1).onnx
-└── test-samples/
+├──best_model.pth
+├── face_detection_yunet.onnx
+└── test_samples/
     └── Class_X_Example.mp4
 ```
 
