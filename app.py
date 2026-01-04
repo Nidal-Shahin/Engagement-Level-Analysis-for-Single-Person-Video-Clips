@@ -154,7 +154,7 @@ def process_video(video_path, smooth_factor=5, batch_size=12, target_fps=5):
 
 # 3. Gradio-Based UI 
 with gr.Blocks() as demo:
-    gr.Markdown("# Person Engagement Analysis (Optimized)")
+    gr.Markdown("# Person Engagement Analysis")
     
     with gr.Row():
         with gr.Column():
