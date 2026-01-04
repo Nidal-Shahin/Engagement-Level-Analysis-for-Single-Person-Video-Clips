@@ -59,14 +59,14 @@ def process_video(video_path, smooth_factor=5, batch_size=12, target_fps=5):
     if not video_path:
         return None, "Please upload a video first."
         
-    MODEL_PATH = "/kaggle/input/adversarial-vit-with-discriminator-and-gru/pytorch/v1/1/best_progressive_model.pth"
+    MODEL_PATH = "best_model.pth"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = EngagementViT()
     if os.path.exists(MODEL_PATH):
         model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
     model.to(device).eval()
 
-    detector = cv2.FaceDetectorYN.create("/kaggle/input/yunet-facial-landmarks-extractor/onnx/v1/1/face_detection_yunet (1).onnx", "", (0, 0))
+    detector = cv2.FaceDetectorYN.create("face_detection_yunet.onnx", "", (0, 0))
     cap = cv2.VideoCapture(video_path)
     width, height, original_fps = int(cap.get(3)), int(cap.get(4)), cap.get(5)
     
@@ -173,10 +173,10 @@ with gr.Blocks() as demo:
     gr.Markdown("### Test Examples")
     gr.Examples(
         examples=[
-            ["/kaggle/input/test-samples/Class_0_Example.mp4", 5, 12, 5],
-            ["/kaggle/input/test-samples/Class_1_Example.mp4", 5, 12, 5],
-            ["/kaggle/input/test-samples/Class_2_Example.mp4", 5, 12, 5],
-            ["/kaggle/input/test-samples/Class_3_Example.mp4", 5, 12, 5]
+            ["test_samples/Class_0_Example.mp4", 5, 12, 5],
+            ["test_samples/Class_1_Example.mp4", 5, 12, 5],
+            ["test_samples/Class_2_Example.mp4", 5, 12, 5],
+            ["test_samples/Class_3_Example.mp4", 5, 12, 5]
         ],
         inputs=[video_input, smooth_slider, batch_slider, fps_slider],
         outputs=[video_output, results_text],
@@ -191,4 +191,4 @@ with gr.Blocks() as demo:
         outputs=[video_output, results_text]
     )
 
-demo.launch(allowed_paths=["/kaggle/input/test-samples"])
+demo.launch(allowed_paths=["test_samples"])
