@@ -43,7 +43,7 @@ pip install -r requirements.txt
 The system expects the following data structure (based on the space files):
 
 ```bash
-├──best_model.pth
+├── best_model.pth
 ├── face_detection_yunet.onnx
 └── test_samples/
     └── Class_X_Example.mp4
