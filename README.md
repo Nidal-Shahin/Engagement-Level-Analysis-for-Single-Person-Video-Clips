@@ -14,6 +14,7 @@ short_description: AI-powered human engagement analysis using ViT
 # Engagement Analysis System
 
 An optimized deep learning application for analyzing and visualizing human engagement levels in video content using **Vision Transformers (ViT)** and **GRU** architectures.
+
 [![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-yellow)](https://huggingface.co/spaces/Nid4l/Engagement-Level-Analysis-for-Single-Person-Video-Clips)
 ---
 
@@ -52,12 +53,12 @@ The system expects the following data structure (based on the space files):
 
 The system classifies engagement into four categories based on the calculated score ***𝐿***:
 
-| Level      | Range        | Visualization Color |
-|------------|--------------|---------------------|
-| Very High  | L ≥ 2.5      | Green               |
-| High       | 1.5 ≤ L < 2.5| Yellow / Cyan       |
-| Low        | 0.5 ≤ L < 1.5| Orange              |
-| Very Low   | L < 0.5      | Red                 |
+| Level      | Range                | Visualization Color |
+|------------|----------------------|---------------------|
+| Very High  | $L \geq 2.5$         | Green               |
+| High       | $1.5 \leq L < 2.5$   | Yellow / Cyan       |
+| Low        | $0.5 \leq L < 1.5$   | Orange              |
+| Very Low   | $L < 0.5$            | Red                 |
 
 
 ## 💻 Usage
